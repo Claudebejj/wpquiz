@@ -54,7 +54,7 @@ function display_projects($atts) {
             $mycontent = get_the_content();
 
             $output .= '<li>';
-            $output .= '<h2>' . get_the_title() . '</h2>';
+            $output .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
             if($mycontent) $output .= '<div>' . get_the_content() . '</div>';
             if($mycategs) $output .= '<div>Category: ' . get_the_term_list(get_the_ID(), 'project_category', '', ', ', '') . '</div>';
             if($mydate) $output .= '<div>Date: ' . get_post_meta(get_the_ID(), '_project_date', true) . '</div>';
