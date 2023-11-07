@@ -48,7 +48,7 @@ function display_projects($atts) {
 
         while ($projects->have_posts()) {
             $projects->the_post();
-            // 
+            // conditions if the user did not fill the corresponding fields , not to have empty HTML
             $mydate = get_post_meta(get_the_ID(), '_project_date', true);
             $mycategs = get_the_term_list(get_the_ID(), 'project_category', '', ', ', '');
             $mycontent = get_the_content();
